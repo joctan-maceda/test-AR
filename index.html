@@ -22,14 +22,12 @@
     <a-marker type="pattern" url="pattern-qr.patt" emitevents="true">
       
       <!-- Fallback: un cubo que nos permite saber si el marcador se detecta -->
-      <a-box id="fallback-box" position="0 0.25 0" depth="0.5" height="0.5" width="0.5" material="color: yellow;"></a-box>
-
+      
       <!-- Entidad que carga el modelo GLB desde el <a-assets> -->
       <a-entity id="avatar-entity"
                 gltf-model="#avatar-model"
-                scale="0.3 0.3 0.3"
+                scale="0.5 0.5 0.5"
                 position="0 0 0"
-                rotation="0 180 0"
                 visible="true">
       </a-entity>
 
