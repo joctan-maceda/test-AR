@@ -13,6 +13,12 @@
   <a-scene embedded arjs="trackingMethod: best;" vr-mode-ui="enabled: false" renderer="logarithmicDepthBuffer: true; antialias: true;">
     
   
+    <a-entity 
+        gltf-model="url(model.glb)"
+        scale="0.2 0.2 0.2"
+        position="0 0 0"
+        rotation="0 180 0">
+     </a-entity>
 
     <!-- Marker: usa tu pattern -->
     <a-marker type="pattern" url="pattern-qr_default.patt" emitevents="true">
@@ -20,12 +26,7 @@
       <!-- Fallback: un cubo que nos permite saber si el marcador se detecta -->
       <a-box id="fallback-box" position="0 0.25 0" depth="0.5" height="0.5" width="0.5" material="color: yellow;"></a-box>
 
-      <a-entity 
-        gltf-model="url(model.glb)"
-        scale="0.2 0.2 0.2"
-        position="0 0 0"
-        rotation="0 180 0">
-     </a-entity>
+      
       <!-- Entidad que carga el modelo GLB desde el <a-assets> -->
       
 
