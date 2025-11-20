@@ -10,7 +10,29 @@
 </head>
 <body style="margin:0; overflow:hidden;">
 
-  <a-scene embedded arjs="trackingMethod: best;" vr-mode-ui="enabled: false" renderer="logarithmicDepthBuffer: true; antialias: true;">
+ <a-scene embedded arjs="trackingMethod: best;">
+  
+    <a-marker type="pattern" url="pattern-qr.patt">
+        <a-entity 
+          gltf-model="url(planta.glb)"
+          scale="0.5 0.5 0.5"
+          position="0 0 0"
+          rotation="0 180 0">
+        </a-entity>
+    </a-marker>
+
+    <a-entity camera></a-entity>
+
+  </a-scene>
+
+  <!-- Mensaje de ayuda para debug manual -->
+  <div id="debug" style="position: fixed; left:10px; bottom:10px; background: rgba(0,0,0,0.5); color: #fff; padding:6px 8px; font-size:13px; border-radius:6px;">
+    1 Si el cubo amarillo aparece sobre el marcador → el QR/pattern funciona. Si el cubo aparece pero el modelo no → problema con el .glb (ruta, formato o carga).
+  </div>
+
+</body>
+</html>
+<!--  <a-scene embedded arjs="trackingMethod: best;" vr-mode-ui="enabled: false" renderer="logarithmicDepthBuffer: true; antialias: true;">
     
   
     <a-entity 
@@ -21,7 +43,7 @@
      </a-entity>
     
 
-    <!-- Marker: usa tu pattern -->
+    Marker: usa tu pattern 
     <a-marker type="pattern" url="pattern-qr_default.patt" emitevents="true">
       <a-entity 
         gltf-model="url(planta.glb)"
@@ -33,15 +55,7 @@
 
    </a-marker>
 
-    <!-- Cámara que funciona con AR.js -->
+     Cámara que funciona con AR.js 
     <a-marker-camera preset="hiro"></a-marker-camera>
 
-  </a-scene>
-
-  <!-- Mensaje de ayuda para debug manual -->
-  <div id="debug" style="position: fixed; left:10px; bottom:10px; background: rgba(0,0,0,0.5); color: #fff; padding:6px 8px; font-size:13px; border-radius:6px;">
-    1 Si el cubo amarillo aparece sobre el marcador → el QR/pattern funciona. Si el cubo aparece pero el modelo no → problema con el .glb (ruta, formato o carga).
-  </div>
-
-</body>
-</html>
+  </a-scene> -->
