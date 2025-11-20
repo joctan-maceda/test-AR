@@ -13,23 +13,29 @@
   <a-scene embedded arjs="trackingMethod: best;" vr-mode-ui="enabled: false" renderer="logarithmicDepthBuffer: true; antialias: true;">
     
   
-    
+    <a-entity 
+        gltf-model="url(planta.glb)"
+        scale="0.1 0.1 0.1"
+        position="0 0 0"
+        rotation="0 180 0">
+     </a-entity>
      <a-box id="fallback-box" position="0 0.25 0" depth="0.5" height="0.5" width="0.5" material="color: yellow;"></a-box>
 
 
     <!-- Marker: usa tu pattern -->
     <a-marker type="pattern" url="pattern-qr_default.patt" emitevents="true">
-     
-      <!-- Fallback: un cubo que nos permite saber si el marcador se detecta -->
-      
-      
-      <!-- Entidad que carga el modelo GLB desde el <a-assets> -->
-      
+      <a-entity 
+        gltf-model="url(planta.glb)"
+        scale="0.1 0.1 0.1"
+        position="0 0 0"
+        rotation="0 180 0">
+     </a-entity>
+     <a-box id="fallback-box" position="0 0.25 0" depth="0.5" height="0.5" width="0.5" material="color: yellow;"></a-box>
 
-    </a-marker>
+   </a-marker>
 
     <!-- Cámara que funciona con AR.js -->
-    <a-entity camera></a-entity>
+    <a-marker-camera preset="hiro"></a-marker-camera>
 
   </a-scene>
 
