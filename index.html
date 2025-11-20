@@ -8,45 +8,14 @@
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 </head>
-<body style="margin:0; overflow:hidden;">
-
-  <a-scene embedded arjs="trackingMethod: best;" vr-mode-ui="enabled: false" renderer="logarithmicDepthBuffer: true; antialias: true;">
-    
-    <!-- Preload assets -->
-    <a-assets crossorigin="anonymous">
-      <!-- Si tu archivo glb está en la misma carpeta que index.html usa src="honey_pot_picnic.glb" -->
-      <a-asset-item id="avatar-model" src="honey_pot_picnic.glb"></a-asset-item>
-    </a-assets>
-
-    <!-- Marker: usa tu pattern -->
-    <a-marker type="pattern" url="pattern-qr1.patt" emitevents="true">
-      
-      <!-- Fallback: un cubo que nos permite saber si el marcador se detecta -->
-      <a-box id="fallback-box" position="0 0.25 0" depth="0.5" height="0.5" width="0.5" material="color: yellow;"></a-box>
-
-      <!-- Entidad que carga el modelo GLB desde el <a-assets> -->
-      <a-entity id="avatar-entity"
-                gltf-model="#avatar-model"
-                scale="0.3 0.3 0.3"
-                position="0 0 0"
-                visible="true">
-      </a-entity>
-
-    </a-marker>
-
-    <!-- Cámara que funciona con AR.js -->
-    <a-entity camera></a-entity>
-
-    <!-- Luces básicas para ver el modelo -->
-    <a-entity light="type: directional; intensity: 0.9" position="0 4 2"></a-entity>
-    <a-entity light="type: ambient; intensity: 0.6"></a-entity>
-
-  </a-scene>
-
-  <!-- Mensaje de ayuda para debug manual -->
-  <div id="debug" style="position: fixed; left:10px; bottom:10px; background: rgba(0,0,0,0.5); color: #fff; padding:6px 8px; font-size:13px; border-radius:6px;">
-    2 Si el cubo amarillo aparece sobre el marcador → el QR/pattern funciona. Si el cubo aparece pero el modelo no → problema con el .glb (ruta, formato o carga).
-  </div>
-
+<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js">
+</script>
+<body style="margin:0px; overflow:hidden;">
+ <a-scene embedded arjs>
+ <a-box position="0 0.5 0" material="color: yellow;"></a-box>
+ <a-marker-camera preset="hiro"></a-marker-camera>
+ </a-scene>
 </body>
+
 </html>
